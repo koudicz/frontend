@@ -105,6 +105,9 @@ class HomeAssistantMain extends LitElement {
 
   protected firstUpdated() {
     import(/* webpackChunkName: "ha-sidebar" */ "../components/ha-sidebar");
+    import(
+      /* webpackChunkName: "ha-sidebar" */ "../components/ha-sidebar-overhaul"
+    );
 
     this.addEventListener(
       "hass-edit-sidebar",
