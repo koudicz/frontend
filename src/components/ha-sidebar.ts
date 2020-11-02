@@ -389,7 +389,7 @@ class HaSidebar extends LitElement {
           this._renderEmptySortable ? "" : this._renderPanels(beforeSpacer)
         )}
       </div>
-      ${this._renderSpacer()}
+      ${this._renderHiddenItemSpacer()}
       ${this._renderHiddenPanels()} `;
   }
 
@@ -464,6 +464,10 @@ class HaSidebar extends LitElement {
 
   private _renderSpacer() {
     return html`<li divider role="separator" class="spacer"></li>`;
+  }
+
+  private _renderHiddenItemSpacer() {
+    return html`<li divider role="separator" class="spacer-hidden"></li>`;
   }
 
   private _renderNotifications() {
@@ -1042,6 +1046,14 @@ class HaSidebar extends LitElement {
         .spacer {
           flex: 1;
           pointer-events: none;
+          border: 0px;
+        }
+
+        .spacer-hidden {
+          flex: 1;
+          pointer-events: none;
+          height: 77px;
+          border: 0px;
         }
 
         .subheader {
